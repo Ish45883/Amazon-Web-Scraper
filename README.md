@@ -47,7 +47,7 @@ python scraper.py
 ```
 
 ---
-##Demo 
+## Demo 
 
 ![image](img.png)
 
