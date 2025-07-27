@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <div class="container">
+        <h1>Amazon Product Scraper</h1>
+        
+        <div class="search-container">
+            <input type="text" id="productUrl" placeholder="Enter Amazon product URL">
+            <button onclick="scrapeProduct()">Fetch Details</button>
+        </div>
+
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Fetching product details...</p>
+        </div>
+
+        <div class="product-card" id="productCard">
+            <img id="productImage" alt="Product Image" class="product-image">
+            <h2 id="productTitle"></h2>
+            <div class="price-container">
+                <span class="currency">₹</span>
+                <span class="price" id="productPrice"></span>
+            </div>
+            <div class="rating" id="productRating"></div>
+            <p id="productDescription" class="description"></p>
+            <ul id="productFeatures" class="features"></ul>
+            <a href="#" id="productLink" target="_blank" class="view-button">View on Amazon</a>
+            <div id="recommendedProducts" class="recommendations"></div>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            Could not fetch product details. Please try again.
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
